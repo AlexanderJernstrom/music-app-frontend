@@ -8,7 +8,7 @@ export const Collab = () => {
   const [genre, setGenre] = useState("");
 
   const getArtist = () => {
-    if (type || genre === "") {
+    if (type === "" || genre === "") {
       alert("You can't leave the the checkboxes empty!");
     }
     axios
@@ -53,7 +53,7 @@ export const Collab = () => {
       <Typography variant="h5">Who can play: </Typography>
       <Select
         style={{ width: "12rem" }}
-        onChange={(e) => setGenre(e.currentTarget.value as string)}
+        onChange={(e) => setGenre(e.target.value as string)}
       >
         <MenuItem value="pop">Pop</MenuItem>
         <MenuItem value="country">Country</MenuItem>
